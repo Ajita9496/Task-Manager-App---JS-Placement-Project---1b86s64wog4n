@@ -120,16 +120,16 @@ body {
   overflow-x: hidden;
 }
 .status:nth-child(1) {
-  background-color: #ffd0f4;
+  background-color: #ffc7f3;
 }
 .status:nth-child(2) {
-  background-color: #fffcaf;
+  background-color: #fffc9a;
 }
 .status:nth-child(3) {
-  background-color: #b8fffa;
+  background-color: #9bfff8;
 }
 .status:nth-child(4) {
-  background-color: #cbfdc4;
+  background-color: #c4ffbc;
 }
 
 .status h1 {
@@ -137,8 +137,8 @@ body {
   position:absolute;
   top: 0;
   left: 0;
-  background-color: #6a6a6a4f;
-  color: #f3f3f3;
+  background-color: #0000002e;
+  color: #fffdfd;
   margin: 0;
   width: 100%;
   padding: 0.5rem 1rem;
