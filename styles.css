@@ -1,0 +1,326 @@
+* {
+  box-sizing: border-box;
+}
+.heading {
+    align-items: center;
+    display: flex;
+    height: 10px;
+    left: 0;
+    padding: 0 5px;
+    position:absolute;
+    top: 5px;
+    width: 100%;
+    z-index: 999;
+    margin-top: 20px;
+}
+.logo {
+    height: 40px;
+    justify-items: left; 
+}
+.name{
+  margin-left: 50px;
+  margin-top: 30px;
+  background: linear-gradient(to right, #00ffee 0%,#00508a 50%, #0614d0 100%);-webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 99vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #feffeb;
+  margin-top: 0px ;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+/* The Close and add description Button */
+.close {
+  color: rgb(210, 54, 54);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.open {
+  color: darkgrey;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  height: 50px;
+
+}
+.open:hover,
+.open:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 1px 2px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {
+  padding: 1px 10px;
+ 
+
+}
+
+.todo-container {
+  width: 90vw;
+  height: 70vh;
+  display:flex;
+  justify-content:space-evenly;
+  
+}
+.main {
+  width: 90vw;
+  
+}
+
+.status {
+  width: 20vw;
+  height: 500px;
+  position: relative;
+  padding: 60px 1rem 0.5rem;
+  overflow-wrap: break-word;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.status:nth-child(1) {
+  background-color: #ffd0f4;
+}
+.status:nth-child(2) {
+  background-color: #fffcaf;
+}
+.status:nth-child(3) {
+  background-color: #b8fffa;
+}
+.status:nth-child(4) {
+  background-color: #cbfdc4;
+}
+
+.status h1 {
+  text-align: center;
+  position:absolute;
+  top: 0;
+  left: 0;
+  background-color: #6a6a6a4f;
+  color: #f3f3f3;
+  margin: 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  align-items: center;
+}
+.addtaskhead{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+}
+#add_btn {
+  padding: .5rem 1rem;
+  font-weight: bold;
+  width: 96%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgb(255, 255, 255);
+  background-color: rgb(139, 193, 255);
+  outline: none;
+  border: none;
+  font-size: 2rem;
+  margin: 1rem 0;
+  border: none;
+  cursor: pointer;
+}
+
+#add_btn:hover {
+  background-color:  rgb(88, 166, 255);
+  color: rgb(255, 253, 253);
+}
+
+.todo {
+  align-items: center;
+  position: relative;
+  background-color: #fff;
+  box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px,
+    rgba(15, 15, 15, 0.1) 0px 2px 4px;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  font-weight:400px;
+}
+.description {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: normal;
+}
+.todo .close {
+  position: absolute;
+  right: 1rem;
+  top: 0rem;
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+}
+.todo .open {
+  position: absolute;
+  right: 1rem;
+  top: 0rem;
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.popup-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  background-color: white;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vh;
+  transition: opacity 0.3s ease;
+}
+.popup-container.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+.popup {
+  width: 500px;
+  background: white;
+  max-width: 100%;
+  border-radius: 5px;
+  position: center;
+  text-align: center;
+  padding: 30px, 50px;
+  color: #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.popup button {
+  width: 100%;
+  margin-top: 50px;
+  padding: 10px 0;
+  background: #b3ffa8;
+  color: #000;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.todo .close:hover {
+  color: #2b2b37;
+}
+.todo .open:hover {
+  color: #2c2c3a;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+.open-modal {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+.modal {
+  width: 450px;
+  position: fixed;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: top 0.3s ease-in-out;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  z-index: 2;
+  background-color: #fff;
+}
+
+.modal.active {
+  top: 15%;
+}
+.modal .body {
+  padding: 0.75rem;
+
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#overlay.active {
+  display: block;
+}
+#todo_input_description,
+#todo_input,
+#todo_submit {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  margin: 0.25rem;
+}
+
+#todo_submit {
+  background-color:#7cca75;
+  color: #fffbfb;
+  font-size: 1.25rem;
+  border: none;
+  font-weight: bold;
+}
+#todo_submit:hover {
+  background-color: #56cc5a;
+  color: #ffffff;
+  font-size: 1.25rem;
+  border: none;
+}
